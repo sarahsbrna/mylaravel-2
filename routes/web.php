@@ -29,7 +29,7 @@ Route::get('/profile', function () {
 });
 
 
-Route::get('mahasiswa/ti/Sabrina', function () {
+Route::get('mahasiswa/ti/sabrina', function () {
    echo "<p style='font-size:40;color:orange'>Jurusan Teknologi Informasi";
    echo "<h1> Selamat Datang Sabrina...</h1>";
    echo "<hr>";
@@ -47,6 +47,8 @@ Route::get('hitungusia/{nama}/{tahunlahir}',function($nama,$tahun_lahir){
 $usia = date('Y') - $tahun_lahir;
 return "<p>Hai <b>". $nama . "</b><br> usia anda sekarang adalah <b>". $usia ."</b> tahun.</p>";
 });
+
+//aaaaa
 
 
 //route with optional parameter
@@ -96,7 +98,7 @@ Route::post('/hitung-nilai', [NilaiController::class, 'hitungNilai']);
 
 Route::resource('nilai', NilaiController::class);
 
-Route::get('mahasiswa/pnp/Sarah', function () {
+Route::get('mahasiswa/pnp/sarah', function () {
    echo "<p style='font-size:40;color:orange'>Politeknik Negeri Padang";
    echo "<h1> Selamat Datang Sarah...</h1>";
    echo "<hr>";
@@ -105,21 +107,21 @@ Route::get('mahasiswa/pnp/Sarah', function () {
 
 // Authentication routes
 Route::get('/login', function() {
-  return view('auth.login');
+  return view('Tugas1.auth.login');
 });
 
 Route::get('/register', function() {
-  return view('auth.register');
+  return view('Tugas1.auth.register');
 });
 
-// Dashboard routes
 Route::get('/dashboard', function() {
-  return view('dashboard');
+  return view('Tugas1.auth.dashboard');
 });
+
 
 // Profile management routes
 Route::get('/profile/edit', function() {
-  return view('profile.edit');
+  return view('Tugas1.profile.edit');
 });
 
 Route::put('/profile/update', function() {
@@ -128,12 +130,12 @@ Route::put('/profile/update', function() {
 
 // API documentation route
 Route::get('/docs', function() {
-  return view('api.documentation');
+  return view('Tugas1.api.documentation');
 });
 
 // Contact form routes
 Route::get('/contact', function() {
-  return view('contact');
+  return view('Tugas1.contact');
 });
 
 Route::post('/contact/send', function() {
